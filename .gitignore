@@ -3,8 +3,7 @@ _site
 .jekyll-metadata
 .users.yml
 node_modules
-staticman
-staticman.pub
+b
 package-lock.json
 
 # Local Netlify folder
