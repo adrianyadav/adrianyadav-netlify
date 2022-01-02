@@ -1,8 +1,31 @@
+// Hamburger transition
+.navigation {
+  position: fixed;
+  display: block;
+  float: right;
+  height: 6rem;
+  width: 100%;
+  z-index: 10;
+  transition: right 0.5s cubic-bezier(0.7, 0.4, 0, 1);
+
+  @include respond(xs) {
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    transform: none;
+    z-index: 100;
+    width: 300px;
+    height: 100vh;
+    background: $color-white;
+  }
+}
+
 .nav {
   display: grid;
   max-width: 1200px;
   place-items: center;
   margin: 0 auto;
+  position: relative;
 
   @include respond(xs) {
     display: flex;
@@ -21,177 +44,19 @@
       margin: 0 0.5rem;
     }
   }
-}
 
-.navigation {
-  position: fixed;
-  display: block;
-  float: right;
-  height: 6rem;
-  width: 100%;
-  z-index: 10;
-
-  &.navigation--active {
-    right: 0;
-
-    .nav__buttons {
-      @include respond(xs) {
-        background: none;
-        position: initial;
-        right: 0;
-      }
-    }
-
-    .icon--close-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .icon--menu {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .icon--search {
-      display: none;
-    }
-
-    .icon--close-search {
-      // fill: $color-secondary-dark-2;
-      position: absolute;
-      right: 40px;
-      top: 13px;
-    }
-  }
-
-  .icon--close-menu {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .icon--menu {
-    opacity: 0;
-    visibility: hidden;
+  &__buttons {
     @include respond(xs) {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  @include respond(xs) {
-    position: fixed;
-    top: 0;
-    left: inherit;
-    right: -300px;
-    bottom: 0;
-    transform: none;
-    z-index: 100;
-    width: 300px;
-    height: 100vh;
-    transition: right 0.5s cubic-bezier(0.7, 0.4, 0, 1);
-    background: #fff;
-  }
-
-  .nav {
-    position: relative;
-    height: 5rem;
-
-    &__buttons {
-      @include respond(xs) {
-        position: absolute;
-        // background: $background-primary-gradient-light;
-        background: rgba(3, 63, 99, 0.4);
-        right: 300px;
-        width: 100vw;
+      position: absolute;
+      background: rgba(3, 63, 99, 0.4);
+      right: 300px;
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      a {
         display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        a {
-          display: flex;
-        }
-        .icon--menu,
-        .icon--search {
-          fill: $color-white;
-        }
-      }
-    }
-
-    &__item {
-      text-align: center;
-      display: inline;
-      padding: 0;
-    }
-
-    &__link {
-      font-size: 1.7rem;
-      color: $font-color;
-      text-decoration: none;
-      padding: 1rem 1.5rem;
-      margin-left: 0.5rem;
-      transition: $default-transition;
-      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-      letter-spacing: 0.05rem;
-      &.nav__link--menu {
-        display: none;
-        @include respond(phone) {
-          text-transform: capitalize;
-          font-weight: $light-weight;
-          color: $color-gray-dark;
-          z-index: 1;
-          position: relative;
-          display: inline-block;
-          &:after {
-            content: '';
-            border-bottom: 2px solid $color-grey-light-1;
-            background: inherit;
-            height: 100%;
-            width: 80%;
-            @include absCenter;
-          }
-
-          &:hover {
-            box-shadow: initial;
-            background-color: initial;
-            color: initial;
-            transform: initial;
-          }
-        }
-      }
-      @include respond(phone) {
-        box-shadow: none;
-        text-align: left;
-        width: 100%;
-        padding-left: 4rem;
-        text-transform: capitalize;
-        font-weight: $medium-weight;
-        color: $color-gray-dark;
-        margin-left: 0;
-        &:not(last-child) {
-          margin-bottom: 0.5rem;
-        }
-      }
-      &:hover,
-      &:focus,
-      &:active {
-        box-shadow: none;
-        background-color: $color-primary;
-        color: $color-white;
-        transform: translateY(0) scale(1);
       }
     }
   }
-}
-
-.icon--close-search,
-.icon--close-menu {
-  fill: #033f63;
-  width: 3.2rem;
-  height: 3.2rem;
-  margin-right: -15px;
-  cursor: pointer;
-}
-.icon--close-menu {
-  position: absolute;
-  right: 3.5rem;
-  top: 1.5rem;
 }

@@ -21,3 +21,74 @@
     }
   }
 }
+
+.icon--close-search,
+.icon--close-menu {
+  fill: #033f63;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-right: -15px;
+  cursor: pointer;
+}
+.icon--close-menu {
+  position: absolute;
+  right: 3.5rem;
+  top: 1.5rem;
+}
+
+.navigation.navigation--active {
+  right: 0;
+
+  .nav__buttons {
+    @include respond(xs) {
+      background: none;
+      position: initial;
+      right: 0;
+    }
+  }
+
+  .icon--close-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .icon--menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .icon--search {
+    display: none;
+  }
+
+  .icon--close-search {
+    fill: $color-primary;
+    position: absolute;
+    right: 40px;
+    top: 13px;
+  }
+}
+
+.icon--close-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.icon--menu {
+  opacity: 0;
+  visibility: hidden;
+  @include respond(xs) {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.icon--menu,
+.icon--search {
+  fill: $color-white;
+}
+
+.icon--search {
+  float: right;
+  fill: #033f63;
+}
