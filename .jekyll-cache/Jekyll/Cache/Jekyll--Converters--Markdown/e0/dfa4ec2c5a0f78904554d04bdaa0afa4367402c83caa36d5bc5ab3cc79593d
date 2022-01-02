@@ -1,0 +1,2 @@
+I""<p>I’ve always wondered what the best way to create a blog is - meaning it should be both development friendly and easy for clients to edit. I stumbled upon using <a href="https://jekyllrb.com/" target="\_blank">Jekyll</a> (a static blog generator) with <a href="https://www.netlify.com/" target="\_blank">Netlify</a> for hosting as well as <a href="https://www.netlifycms.org/" target="\_blank">Netlify CMS</a> for content management. This stack has been my go to for creating blogs, it’s super easy to get started and fun to work with.</p>
+:ET

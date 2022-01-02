@@ -1,0 +1,85 @@
+$skill-padding: 12rem 2rem;
+$skill-padding-mobile: 4rem;
+
+.callout {
+  max-width: 90rem;
+  padding: 4rem;
+  transition: $default-transition;
+  box-shadow: 0 3rem 6rem $callout-box-shadow;
+  text-align: center;
+
+  @include respond(xs) {
+    padding: 2rem;
+  }
+
+  &--skill-reverse {
+    padding: $skill-padding;
+    background: $color-primary-dark;
+    color: $color-white;
+    @include respond(xs) {
+      padding: $skill-padding-mobile;
+    }
+
+    .callout-title {
+      color: inherit;
+    }
+  }
+
+  &--parallel {
+    transform: skewX(-12deg);
+
+    > * {
+      transform: skewX(12deg);
+    }
+
+    @include respond(xs) {
+      transform: skewX(0);
+
+      > * {
+        transform: skewX(0);
+      }
+    }
+  }
+
+  &--skill {
+    position: relative;
+    z-index: 1;
+    padding: $skill-padding;
+    overflow: hidden;
+    background: rgb(255 255 255 / 80%);
+
+    @include respond(xs) {
+      padding: 4rem;
+      border-bottom: 1px solid $callout-box-shadow;
+      box-shadow: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 0%;
+      transform: rotate(-50deg) translateX(-50%);
+      transform-origin: top left;
+      background: rgb(3 63 99 / 70%);
+    }
+
+    &:hover {
+      background: $color-primary-dark;
+
+      > * {
+        fill: $color-white;
+        color: $color-white;
+      }
+
+      &::after {
+        height: 150%;
+        transform: rotate(-50deg) translateX(-50%);
+        transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+    }
+  }
+}

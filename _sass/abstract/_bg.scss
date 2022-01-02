@@ -1,0 +1,17 @@
+// Backgrounds
+
+.bg {
+  transform: skewY(-8deg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(3 63 99 / 85%),
+      rgb(162 213 242 / 85%)
+    ),
+    url($image-skills);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  > * {
+    transform: skewY(8deg);
+  }
+}

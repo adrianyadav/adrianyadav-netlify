@@ -1,0 +1,13 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1rem;
+  column-gap: 3rem;
+  @include respond(xs) {
+    display: flex;
+    flex-flow: column;
+  }
+}
+ 

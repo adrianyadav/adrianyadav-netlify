@@ -1,0 +1,44 @@
+.btn {
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+  height: fit-content;
+  padding: $padding-btn;
+  transition: $default-transition;
+  border: none;
+  background-color: $color-white;
+  color: $text-color-btn;
+  font-size: $font-size-btn;
+  font-weight: $font-weight-lt;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 5%);
+
+  &:hover {
+    outline: none;
+    background-color: $color-primary;
+    color: $color-white;
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &--inverted {
+    background-color: $color-primary;
+    color: $color-white;
+    &:hover {
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+
+  &--icon {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 30px 70px;
+    line-height: 1.5;
+    place-items: flex-start;
+  }
+}

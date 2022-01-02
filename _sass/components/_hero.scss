@@ -1,0 +1,36 @@
+.hero {
+  display: grid;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  place-content: center;
+  justify-items: flex-start;
+
+  &-title {
+    margin-bottom: 1rem;
+    color: $color-white;
+    font-size: $font-size-xlg;
+    font-weight: $font-weight-lt;
+    letter-spacing: 0.6rem;
+
+    @include respond(xs) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &--home {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-home-bg-light, 0.75),
+        rgba($color-home-bg-dark, 0.85)
+      ),
+      url($image-home);
+    clip-path: polygon(0 0, 100% 20vh, 100% 75vh, 0 100%);
+
+    @include respond(xs) {
+      clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%);
+      height: 55vh;
+    }
+  }
+}

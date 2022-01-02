@@ -1,0 +1,194 @@
+I"q#<p>I’ve always wondered what the best way to create a blog is - meaning it should be both development friendly and easy for clients to edit. I stumbled upon using <a href="https://jekyllrb.com/" target="\_blank">Jekyll</a> (a static blog generator) with <a href="https://www.netlify.com/" target="\_blank">Netlify</a> for hosting as well as <a href="https://www.netlifycms.org/" target="\_blank">Netlify CMS</a> for content management. This stack has been my go to for creating blogs, it’s super easy to get started and fun to work with.</p>
+
+<p>In this series, we will be making a blog editable via Netlify CMS.</p>
+
+<p>The final product will look like: <a href="http://adrianyadav-blog.netlify.com/" target="\_blank">http://adrianyadav-blog.netlify.com/</a> and we will make every bit of content on the page editable via an admin interface Netlify provides.</p>
+
+<h2 id="few-notes">Few notes</h2>
+
+<p>If you are ever unsure of how a file should look like: take a look at the <a href="https://github.com/adrianyadav/jekyll-netlify-cms-blog" target="\_blank">completed repo</a>.</p>
+
+<p>If you see the command “Code” in the snippets, it’s set to opens visual studio code, feel free to use whatever text editor you want.</p>
+
+<h2 id="lets-get-started">Let’s get started</h2>
+
+<p>I’ve already created a repo to help kickstart off things</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:adrianyadav/jekyll-template-starter.git my-blog
+cd my-blog
+bundle
+jekyll serve --livereload
+</code></pre></div></div>
+
+<p>Open up <a href="http://127.0.0.1:4000/" target="\_blank">http://127.0.0.1:4000/</a> in the browser and you should see the following:</p>
+
+<p><img src="/img/uploads/blog-running.jpg" alt="Adrian's Blog" /></p>
+
+<p>Let’s commit everything to Git.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git remote set-url origin &lt;your-origin-here&gt;
+git add --all
+git commit -am "initial commit"
+git push origin master
+jekyll serve --livereload
+</code></pre></div></div>
+
+<h2 id="connecting-the-repo-to-netlify">Connecting the repo to Netlify</h2>
+
+<p>Sign up for an account on <a href="https://www.netlify.com/" target="\_blank">https://www.netlify.com/</a> and log in. Hit the create a new site button and connect it to your git account, select the repository and hit deploy.</p>
+
+<p>If you get stuck follow on from <a href="https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/#connecting-to-netlify" target="\_blank">here</a>.</p>
+
+<p>If all goes well, Netlify will deploy your site live on a randomly generated URL like <a href="https://adoring-murdock-f38c3d.netlify.com/">https://adoring-murdock-f38c3d.netlify.com/</a>.</p>
+
+<h2 id="adding-nelify-cms-to-the-blog">Adding Nelify CMS to the blog</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir admin &amp;&amp; cd admin &amp;&amp; touch index.html
+code index.html
+</code></pre></div></div>
+
+<p>Copy the following into index.html.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- admin/index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Content Manager&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Include the script that builds the page and powers Netlify CMS --&gt;
+    &lt;script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p>Create the config file with the following contents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch _config.yml
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># config.yml
+
+backend:
+name: git-gateway
+branch: master # Branch to update (optional; defaults to master)
+media_folder: 'assets/uploads'
+collections:
+
+-   name: "blog"
+    label: "Blog"
+    folder: "\_posts/"
+    fields:
+    -   { name: Title }
+</code></pre></div></div>
+
+<h2 id="enable-identity-and-git-gateway">Enable identity and git gateway:</h2>
+
+<p>Follow the instructons on <a href="https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway" target="\_blank">Netlify Docs</a>. Create a user for yourself and enable git gateway too.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code \_includes/head.html
+</code></pre></div></div>
+
+<p>add the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Your head.html file should end up like the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;head&gt;
+	&lt;meta charset="UTF-8" /&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  	&lt;link
+		href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&amp;display=swap"
+		rel="stylesheet"
+	/&gt;
+	&lt;script src="https://identity.netlify.com/v1/netlify-identity-widget.js"&gt;&lt;/script&gt;
+...
+&lt;/head&gt;
+</code></pre></div></div>
+
+<p>Let’s commit everything and push.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add --all
+git commit -am "added netlify cms"
+git push origin master"
+</code></pre></div></div>
+
+<p>Every time you push to git, your netlify site will redeploy. Now, check your email and you should have received one from Nelify.</p>
+
+<p><img src="/img/uploads/youve-been-invited.jpg" alt="accept-link" /></p>
+
+<p>Click on “accept the invite link” which will let you create a password for your Netlify account.</p>
+
+<p>add /admin to your site and login, e.g. <a href="https://adoring-murdock-f38c3d.netlify.com/admin">https://adoring-murdock-f38c3d.netlify.com/admin</a></p>
+
+<p>You should get the below:</p>
+
+<p><img src="/img/uploads/netlify-admin.jpg" alt="" /></p>
+
+<h2 id="lets-add-the-ability-for-users-to-create-and-delete-posts">Let’s add the ability for users to create and delete posts</h2>
+
+<p>Open up your netlify /admin/config.yml and replace collections with the folowing</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>collections: # A list of collections the CMS should be able to edit
+
+-   name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "\_posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc d
+    description: "Manage your posts here"
+    create: true # Allow users to create new documents in this collection
+    slug: "---"
+    summary: " -- //"
+    fields: # The fields each document in this collection have
+    -   { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+    -   { label: "Title", name: "title", widget: "string", tagname: "h1" }
+    -   { label: "Body", name: "body", widget: "markdown" }
+    -   {
+        label: "Categories",
+        name: "categories",
+        widget: "string",
+        required: false,
+        }
+        meta: # Meta data fields. Just like fields, but without any preview element
+    -   {
+        label: "Publish Date",
+        name: "date",
+        widget: "datetime",
+        format: "YYYY-MM-DD hh:mm:ss",
+        }
+</code></pre></div></div>
+
+<p>Commit and push.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -am "feat: posts"
+git push origin master
+</code></pre></div></div>
+
+<p>You can also access /admin locally.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve --livereload
+http://127.0.0.1:4000/admin/
+</code></pre></div></div>
+
+<p>Create a new post through the GUI and in few seconds you should see it at top:</p>
+
+<p><a href="https://adoring-murdock-f38c3d.netlify.com/">https://adoring-murdock-f38c3d.netlify.com/</a></p>
+
+<p><img src="/img/uploads/youve-been-invited.jpg" alt="created-post" /></p>
+
+<p>Remember to sync your local with the live version everytime you create a new post.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin master
+</code></pre></div></div>
+
+<h2 id="next-steps">Next steps</h2>
+
+<p>Now that all the setup is done, we can move on the fun stuff. In the next part, we will make the rest of the site editable via netlify (the header, footer and about page).</p>
+
+<p>Stay tuned.</p>
+:ET

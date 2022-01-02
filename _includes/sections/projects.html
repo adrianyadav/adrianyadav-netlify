@@ -1,47 +1,24 @@
 ---
----
+---h
 
-<section class="section-projects" id="projects">
-	<div class="u-center-text">
-		<h2 class="heading-secondary u-center-margin u-margin-bottom-medium">
-			{{ site.data.home.sectionProjectTitle }}
-		</h2>
-	</div>
-	<div class="cards">
-		{% for item in site.data.projects.items %} {% assign projectName =
-		item.projectName | replace_first: ' ', '' | downcase %}
-
-		<div class="card">
-			<div class="card__side card__side--front">
-				<div class="card__picture card__picture--{{ projectName }}">
-					&nbsp;
-				</div>
-				<h3 class="card__heading">
-					<span class="card__heading-span card__heading-span--{{
-								projectName
-							}}">{{ item.projectName }}</span>
-				</h3>
-				<div class="card__details">
-					{{ item.body | markdownify }}
-				</div>
-			</div>
-			<div class="card__side card__side--back card__side--back-{{
-						projectName
-					}}">
-				<div class="card__cta">
-					{% if item.projectGithubRepo == true %}
-					<a class="btn btn--white" href="{{ item.projectLiveLink }}" target="_blank" rel="noopener">Github
-						repo
-					</a>
-					{% else %}
-					<a class="btn btn--white" href="{{ item.projectLiveLink }}" rel="noopener" target="_blank">Visit
-						website
-					</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-
-		{% endfor %}
-	</div>
+<section id="projects" class="section">
+  <h2 class="h2 h2--underline">{{ site.data.home.sectionProjectTitle }}</h2>
+  <ul class="cards">
+    {% for item in site.data.projects.items %} {% assign projectName =
+    item.projectName | replace_first: ' ', '' | downcase %}
+    <li class="card">
+      <span class="card-heading">{{ item.projectName }}</span>
+      <ul class="card-desc">
+        {{ item.body | markdownify }}
+      </ul>
+      <a
+        class="btn btn--filldown"
+        target="_blank"
+        rel="noopener"
+        href="{{ item.projectLiveLink }}"
+        >View code</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
 </section>

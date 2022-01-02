@@ -1,0 +1,75 @@
+.skill .icon {
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+
+.icon {
+	width: 6rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+	fill: url(#gradient-horizontal) $color-primary;
+	-webkit-background-clip: text;
+
+	&--center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&--menu {
+		width: 3.2rem;
+		height: 3.2rem;
+		cursor: pointer;
+		fill: $color-secondary-dark-2;
+		margin-top: 1rem;
+		margin-left: 1.5rem;
+		@include respond(phone) {
+			float: right;
+			margin-right: 1.5rem;
+		}
+	}
+
+	&--close-search,
+	&--close-menu {
+		fill: $color-primary-dark-2;
+		width: 3.2rem;
+		height: 3.2rem;
+		margin-right: -15px;
+		cursor: pointer;
+	}
+
+	&--close-menu {
+		position: absolute;
+		right: 3.5rem;
+		top: 1.5rem;
+	}
+
+	&--search {
+		float: right;
+		@include respond(phone) {
+			float: left;
+			margin-left: 1.5rem;
+		}
+		margin-top: 1rem;
+		margin-right: 1.5rem;
+		width: 3.2rem;
+		height: 3.2rem;
+		cursor: pointer;
+		fill: $color-primary-dark-2;
+	}
+
+	&--logo {
+		fill: $color-white;
+		width: 10rem;
+		margin-bottom: 0;
+		transition: fill 0.25s ease-in;
+		&:hover {
+			fill: $color-primary-dark-2;
+		}
+	}
+}
+
+#gradient-horizontal {
+	--color-primary-dark: #3f76a3;
+	--color-primary: #a2d5f2;
+}

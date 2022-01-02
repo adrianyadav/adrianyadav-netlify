@@ -1,5 +1,5 @@
 {% if page.url == "/" %}
-<header class="header">
+<!-- <header class="header">
 	<div class="header__text-box">
 		{% include icon.html class="icon--logo" icon="logo" %}
 		<h1 class="heading-primary">
@@ -11,49 +11,44 @@
 			>{{ site.data.home.mainButtonText }}</a
 		>
 	</div>
-</header>
+</header> -->
+<section class="hero hero--home">
+  {% include icon.html class="icon--logo" icon="logo" %}
+  <h1 class="hero-title">Adrian Yadav</h1>
+  <a class="btn btn--filldown" href="#projects">View my work</a>
+</section>
 {% elsif page.url contains "thanks" %}
 <header class="header header--blog">
-	<div class="header__text-box">
-		<h1 class="heading-primary heading-primary--blog">
-			Now check your email
-		</h1>
-		<p class="heading-text">
-			Almost there — just click the link in your email.
-		</p>
-	</div>
+  <div class="header__text-box">
+    <h1 class="heading-primary heading-primary--blog">Now check your email</h1>
+    <p class="heading-text">
+      Almost there — just click the link in your email.
+    </p>
+  </div>
 </header>
 {% elsif page.url contains "confirmation" %}
 <header class="header header--blog">
-	<div class="header__text-box">
-		<h1 class="heading-primary heading-primary--blog">
-			You've signed up
-		</h1>
-		<p class="heading-text">
-			There's nothing left to do.
-		</p>
-	</div>
+  <div class="header__text-box">
+    <h1 class="heading-primary heading-primary--blog">You've signed up</h1>
+    <p class="heading-text">There's nothing left to do.</p>
+  </div>
 </header>
 {% else %}
 <header class="header header--blog">
-	<div class="header__text-box">
-		<h1 class="heading-primary heading-primary--blog">
-			{{ page.title }}
-		</h1>
-		{% if page.subtitle %}
-		<p class="heading-text">
-			{{ page.subtitle}}
-		</p>
-		{% endif %} {% if page.date %}
-		<time
-			datetime="{{ page.date | date: '%Y-%m-%d' }}"
-			class="post__date post__date--light"
-		>
-			{{ page.date | date: site.date_format }}
-		</time>
+  <div class="header__text-box">
+    <h1 class="heading-primary heading-primary--blog">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="heading-text">{{ page.subtitle}}</p>
+    {% endif %} {% if page.date %}
+    <time
+      datetime="{{ page.date | date: '%Y-%m-%d' }}"
+      class="post__date post__date--light"
+    >
+      {{ page.date | date: site.date_format }}
+    </time>
 
-		{% endif %}
-	</div>
+    {% endif %}
+  </div>
 </header>
 
 {% endif %}
