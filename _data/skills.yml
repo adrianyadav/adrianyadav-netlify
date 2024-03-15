@@ -1,13 +1,13 @@
 items:
-  - skillDescription: Fast load times and lag free interaction are my highest priority.
+  - skillDescription: Fast load times and lag free interaction are my highest priority
     skillIcon: watch
-    skillTitle: Fast
-  - skillDescription: My layouts will work well on any device
+    skillTitle: Performance
+  - skillDescription: "UX involves factors such as usability, accessibility, intuitive navigation, and aesthetics"
     skillIcon: phone
-    skillTitle: Responsive
-  - skillDescription: 'Easy to use, minimal thinking required - intuitive UX/UI.'
+    skillTitle: User Experience (UX)
+  - skillDescription: "Web applications delivered with great quality and speed"
     skillIcon: lightbulb
-    skillTitle: Intuitive
-  - skillDescription: 'Websites don''t have to be static, I love making pages come to life.'
+    skillTitle: Project Management
+  - skillDescription: "Scalability ensures that the web application can handle increased load and traffic as your brand grows"
     skillIcon: webpagetxt
-    skillTitle: Dynamic
+    skillTitle: Scalability

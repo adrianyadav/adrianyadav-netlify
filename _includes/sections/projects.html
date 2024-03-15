@@ -4,21 +4,12 @@
 <section id="projects" class="section">
   <h2 class="h2 h2--underline">{{ site.data.home.sectionProjectTitle }}</h2>
   <ul class="cards">
-    {% for item in site.data.projects.items %} {% assign projectName =
-    item.projectName | replace_first: ' ', '' | downcase %}
     <li class="card">
-      <span class="card-heading">{{ item.projectName }}</span>
-      <ul class="card-desc">
-        {{ item.body | markdownify }}
-      </ul>
-      <a
-        class="btn btn--filldown"
-        target="_blank"
-        rel="noopener"
-        href="{{ item.projectLiveLink }}"
-        >View code</a
-      >
+      <a class="btn btn--filldown" target="_blank" rel="noopener" href="https://insightswithsapi.com">View website</a>
     </li>
-    {% endfor %}
+    <li class="card">
+      <a class="btn btn--filldown" target="_blank" rel="noopener"
+        href="https://rainbowcoloursfamilydaycare.com.au/">View website</a>
+    </li>
   </ul>
 </section>

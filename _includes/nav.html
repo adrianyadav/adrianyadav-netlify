@@ -1,73 +1,12 @@
-<!-- <div class="navigation">
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <span class="nav__link nav__link--menu">Menu</span>
-      </li>
-      {% for item in site.data.nav.items %}
-      <li class="nav__item">
-        <a
-          class="
-            nav__link
-            btn
-            hvr-sweep-to-right
-            {%
-            if
-            page.url
-            contains
-            item.url
-            %}current
-            {%
-            endif
-            %}
-          "
-          href="{{ site.url }}/{{ item.url }}"
-          >{{ item.title }}
-        </a>
-      </li>
-
-      {% endfor %}
-    </ul>
-    <div class="nav__buttons">
-      {% include icon.html class="icon--search hvr-bounce-in" icon="search"%}
-      <a href="https://www.adrianyadav.com" aria-label="Adrian Yadav">
-        {% include icon.html class="icon--menu" icon="logo"%}</a
-      >
-      {% include icon.html class="icon--menu" icon="menu"%} {% include icon.html
-      class="icon--close-menu" icon="close"%}
-    </div>
-  </nav>
-</div> -->
 <div class="navigation">
   <nav class="nav">
     <ul class="nav-list">
-      {% for item in site.data.nav.items %}
       <li>
-        <a
-          href="{{ item.url }}"
-          class="
-            btn
-            {%
-            if
-            page.url
-            contains
-            item.url
-            %}
-            btn--reverse
-            {%
-            endif
-            %}
-          "
-          target="_blank"
-          >{{ item.title }}</a
-        >
+        <a href="#projects" class="btn" target="_blank">Projects</a>
       </li>
-      {% endfor %}
     </ul>
     <div class="nav__buttons">
-      <svg viewBox="0 0 16 16" class="icon icon--md icon--search icon-search">
-        <use xlink:href="#icon-search"></use>
-      </svg>
+
 
       <a href="https://www.adrianyadav.com" aria-label="Adrian Yadav">
         <svg viewBox="0 0 16 16" class="icon icon--md icon--menu icon-logo">
@@ -77,13 +16,9 @@
       <svg viewBox="0 0 16 16" class="icon icon--md icon--menu icon-menu">
         <use xlink:href="#icon-menu"></use>
       </svg>
-      <svg
-        viewBox="0 0 16 16"
-        class="icon icon--md icon--close-menu icon-close"
-      >
+      <svg viewBox="0 0 16 16" class="icon icon--md icon--close-menu icon-close">
         <use xlink:href="#icon-close"></use>
       </svg>
     </div>
   </nav>
 </div>
-{% include search.html %}

@@ -40,10 +40,7 @@
     {% if page.subtitle %}
     <p class="heading-text">{{ page.subtitle}}</p>
     {% endif %} {% if page.date %}
-    <time
-      datetime="{{ page.date | date: '%Y-%m-%d' }}"
-      class="post__date post__date--light"
-    >
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="post__date post__date--light">
       {{ page.date | date: site.date_format }}
     </time>
 
