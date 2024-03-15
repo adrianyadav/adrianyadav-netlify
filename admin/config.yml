@@ -2,160 +2,160 @@ backend:
   name: git-gateway
   branch: master # Branch to update (master by default)
 
-media_folder: 'img/uploads' # Folder where user uploaded files should go
+media_folder: "img/uploads" # Folder where user uploaded files should go
 publish_mode: editorial_workflow
 sass_dir: _sass
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'post' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Post' # Used in the UI, ie.: "New Post"
-    folder: '_posts' # The path to the folder where the documents are stored
-    sort: 'date:desc' # Default is title:asc      d
-    description: 'Manage your posts here'
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "_posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc      d
+    description: "Manage your posts here"
     create: true # Allow users to create new documents in this collection
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} -- {{year}}/{{month}}/{{day}}"
     fields: # The fields each document in this collection have
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
       - {
-          label: 'Categories',
-          name: 'categories',
-          widget: 'string',
+          label: "Categories",
+          name: "categories",
+          widget: "string",
           required: false,
         }
 
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Body", name: "body", widget: "markdown" }
       - label: Comments
         name: comments
         widget: list
-        file: '_data/comments.yml'
+        file: "_data/comments.yml"
         fields:
-          - label: 'Comments'
-            name: 'items'
-            widget: 'list'
+          - label: "Comments"
+            name: "items"
+            widget: "list"
             fields:
-              - { label: 'author', name: 'author', widget: string }
-              - { label: 'comment', name: 'comment', widget: string }
-              - { label: 'date', name: 'date', widget: string }
+              - { label: "author", name: "author", widget: string }
+              - { label: "comment", name: "comment", widget: string }
+              - { label: "date", name: "date", widget: string }
 
-  - name: 'homepage'
-    label: 'Homepage'
-    description: 'Manage homepage here'
+  - name: "homepage"
+    label: "Homepage"
+    description: "Manage homepage here"
     editor:
       preview: false
     files:
-      - label: 'Homepage'
-        name: 'homepage'
-        file: '_data/home.yml'
+      - label: "Homepage"
+        name: "homepage"
+        file: "_data/home.yml"
         fields:
-          - label: 'Author Name'
-            name: 'author'
-            widget: 'string'
-          - label: 'Email Address'
-            name: 'email'
-            widget: 'string'
-          - label: 'Github'
-            name: 'github'
-            widget: 'string'
-          - label: 'Linkedin'
-            name: 'linkedin'
-            widget: 'string'
-          - label: 'Main Button Text'
-            name: 'mainButtonText'
-            widget: 'string'
-          - label: 'Main Button URL'
-            name: 'mainButtonUrl'
-            widget: 'string'
-          - label: 'Section About Title'
-            name: 'sectionAboutTitle'
-            widget: 'string'
-          - label: 'Profile Image'
-            name: 'profileImage'
-            widget: 'image'
-            default: '/uploads/profile.jpg'
+          - label: "Author Name"
+            name: "author"
+            widget: "string"
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+          - label: "Github"
+            name: "github"
+            widget: "string"
+          - label: "Linkedin"
+            name: "linkedin"
+            widget: "string"
+          - label: "Main Button Text"
+            name: "mainButtonText"
+            widget: "string"
+          - label: "Main Button URL"
+            name: "mainButtonUrl"
+            widget: "string"
+          - label: "Section About Title"
+            name: "sectionAboutTitle"
+            widget: "string"
+          - label: "Profile Image"
+            name: "profileImage"
+            widget: "image"
+            default: "/adrian-yadav.jpg"
             media_library:
               config:
               multiple: false
-          - label: 'Section About Sub Title'
-            name: 'sectionAboutSubTitle'
-            widget: 'string'
-          - label: 'Section About Information'
-            name: 'sectionAboutInfo'
-            widget: 'markdown'
-          - label: 'Section Project Title'
-            name: 'sectionProjectTitle'
-            widget: 'string'
-          - label: 'Section Contact Title'
-            name: 'sectionContactTitle'
-            widget: 'string'
-          - label: 'Section Contact Sub Title'
-            name: 'sectionContactSubTitle'
-            widget: 'string'
+          - label: "Section About Sub Title"
+            name: "sectionAboutSubTitle"
+            widget: "string"
+          - label: "Section About Information"
+            name: "sectionAboutInfo"
+            widget: "markdown"
+          - label: "Section Project Title"
+            name: "sectionProjectTitle"
+            widget: "string"
+          - label: "Section Contact Title"
+            name: "sectionContactTitle"
+            widget: "string"
+          - label: "Section Contact Sub Title"
+            name: "sectionContactSubTitle"
+            widget: "string"
 
-  - name: 'navigation'
-    label: 'Navigation'
-    description: 'Manage navigation links here'
+  - name: "navigation"
+    label: "Navigation"
+    description: "Manage navigation links here"
     editor:
       preview: false
     files:
-      - label: 'Navigation'
-        name: 'navigation'
-        file: '_data/nav.yml'
+      - label: "Navigation"
+        name: "navigation"
+        file: "_data/nav.yml"
         fields:
-          - label: 'Navigation Items'
-            name: 'items'
-            widget: 'list'
+          - label: "Navigation Items"
+            name: "items"
+            widget: "list"
             fields:
-              - { label: 'Title', name: 'title', widget: string }
-              - { label: 'Url', name: 'url', widget: string }
+              - { label: "Title", name: "title", widget: string }
+              - { label: "Url", name: "url", widget: string }
 
-  - name: 'skills'
-    label: 'Skills'
-    description: 'Maximum of 4 skills can be active currently, manage them here.'
+  - name: "skills"
+    label: "Skills"
+    description: "Maximum of 4 skills can be active currently, manage them here."
     editor:
       preview: false
     files:
-      - label: 'Skills'
-        name: 'skills'
-        file: '_data/skills.yml'
+      - label: "Skills"
+        name: "skills"
+        file: "_data/skills.yml"
         fields:
-          - label: 'Skill Items'
-            name: 'items'
-            widget: 'list'
+          - label: "Skill Items"
+            name: "items"
+            widget: "list"
             fields:
-              - { label: 'title', name: 'skillTitle', widget: string }
+              - { label: "title", name: "skillTitle", widget: string }
               - {
-                  label: 'Description',
-                  name: 'skillDescription',
+                  label: "Description",
+                  name: "skillDescription",
                   widget: string,
                 }
-              - { label: 'Icon', name: 'skillIcon', widget: string }
-  - name: 'projects'
-    label: 'Projects'
-    description: 'Manage projects here'
+              - { label: "Icon", name: "skillIcon", widget: string }
+  - name: "projects"
+    label: "Projects"
+    description: "Manage projects here"
     editor:
       preview: false
     files:
-      - label: 'Projects'
-        name: 'projects'
-        file: '_data/projects.yml'
+      - label: "Projects"
+        name: "projects"
+        file: "_data/projects.yml"
         fields:
-          - label: 'Project cards'
-            name: 'items'
-            widget: 'list'
+          - label: "Project cards"
+            name: "items"
+            widget: "list"
             fields:
-              - { label: 'title', name: 'projectName', widget: string }
-              - { label: 'details', name: 'body', widget: markdown }
+              - { label: "title", name: "projectName", widget: string }
+              - { label: "details", name: "body", widget: markdown }
               - {
-                  label: 'Available github repo?',
-                  name: 'projectGithubRepo',
+                  label: "Available github repo?",
+                  name: "projectGithubRepo",
                   widget: boolean,
                 }
               - {
-                  label: 'Github link',
-                  name: 'projectGithubLink',
+                  label: "Github link",
+                  name: "projectGithubLink",
                   required: false,
                   widget: string,
                 }
-              - { label: 'Live link', name: 'projectLiveLink', widget: string }
+              - { label: "Live link", name: "projectLiveLink", widget: string }

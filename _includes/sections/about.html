@@ -41,25 +41,11 @@
   <div class="callout callout--parallel">
     <figure class="profile">
       <picture>
-        <source srcset="{{ site.data.home.profileImage | replace: "jpg", "webp"
-        }} type="image/webp" /> <source srcset="{{ site.data.home.profileImage
-        }} type="image/jpeg" />
-        <img
-          alt="{{ site.data.home.author }}"
-          loading="lazy"
-          src="{{ site.data.home.profileImage }}"
-          width="150"
-          height="150"
-          class="profile-image"
-        />
+        <img alt="{{ site.data.home.author }}" loading="lazy" src="{{ site.data.home.profileImage }}" width="150"
+          height="150" class="profile-image" />
       </picture>
-      <a
-        class="profile-link"
-        target="_blank"
-        rel="noopener"
-        href="{{ site.data.home.linkedin }}"
-        ><span class="profile-caption">LINKEDIN</span></a
-      >
+      <a class="profile-link" target="_blank" rel="noopener" href="{{ site.data.home.linkedin }}"><span
+          class="profile-caption">LINKEDIN</span></a>
     </figure>
     <h3>{{ site.data.home.sectionAboutSubTitle }}</h3>
     <p>{{ site.data.home.sectionAboutInfo | markdownify | strip }}</p>
