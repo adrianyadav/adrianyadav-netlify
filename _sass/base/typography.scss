@@ -2,13 +2,16 @@
   margin-bottom: 1rem;
   font-size: $max-font-size;
   font-weight: $font-weight-lt;
+
   @include respond(xs) {
     font-size: $min-font-size;
   }
 
-  @if $font-colour == '' {
+  @if $font-colour =='' {
     color: $font-color;
-  } @else {
+  }
+
+  @else {
     color: $font-colour;
   }
 }
@@ -38,10 +41,16 @@ h2 {
       border-bottom: 3px solid $font-color;
     }
   }
+
   @include responsive-headings($font-size-lg, $font-size-md);
 }
 
 .h3,
 h3 {
   @include responsive-headings($font-size-md, $font-size-md);
+}
+
+
+a {
+  color: $color-primary;
 }

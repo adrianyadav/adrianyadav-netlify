@@ -34,7 +34,7 @@ img {
 */
 .bg {
   transform: skewY(-8deg);
-  background-image: linear-gradient(to right bottom, rgba(3, 63, 99, 0.85), rgba(162, 213, 242, 0.85)), url("../img/skills-unsplash-1x.jpg");
+  background-image: linear-gradient(to right bottom, rgba(3, 63, 99, 0.85), rgba(162, 213, 242, 0.85)), url("../img/skills-unsplash-2x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -128,6 +128,10 @@ h3 {
   h3 {
     font-size: 2.5rem;
   }
+}
+
+a {
+  color: #033f63;
 }
 
 /* Search */
@@ -312,6 +316,7 @@ h3 {
   .cards {
     display: flex;
     flex-flow: column;
+    min-width: 100%;
   }
 }
 
@@ -358,7 +363,7 @@ h3 {
 }
 .hero--home {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(63, 118, 163, 0.75), rgba(3, 63, 99, 0.85)), url("../img/hero-unsplash-2x.jpg");
+  background-image: linear-gradient(to right bottom, rgba(63, 118, 163, 0.75), rgba(3, 63, 99, 0.85)), url("../img/hero-unsplash-3x.jpg");
   clip-path: polygon(0 0, 100% 20vh, 100% 75vh, 0 100%);
 }
 @media (max-width: 37.5em) {
@@ -595,6 +600,7 @@ h3 {
 @media (max-width: 37.5em) {
   .card {
     margin: 1rem 0;
+    min-height: 270px;
   }
 }
 .card::before {
@@ -723,18 +729,6 @@ h3 {
   z-index: 10;
   transition: right 0.5s cubic-bezier(0.7, 0.4, 0, 1);
 }
-@media (max-width: 37.5em) {
-  .navigation {
-    top: 0;
-    right: -300px;
-    bottom: 0;
-    transform: none;
-    z-index: 100;
-    width: 300px;
-    height: 100vh;
-    background: #fff;
-  }
-}
 
 .nav {
   display: grid;
@@ -763,17 +757,8 @@ h3 {
   margin: 0 0.5rem;
 }
 @media (max-width: 37.5em) {
-  .nav__buttons {
-    position: absolute;
-    background: rgba(3, 63, 99, 0.4);
-    right: 300px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  .nav__buttons a {
-    display: flex;
+  .nav {
+    display: none;
   }
 }
 

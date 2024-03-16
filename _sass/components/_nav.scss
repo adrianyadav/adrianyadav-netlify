@@ -8,16 +8,7 @@
   z-index: 10;
   transition: right 0.5s cubic-bezier(0.7, 0.4, 0, 1);
 
-  @include respond(xs) {
-    top: 0;
-    right: -300px;
-    bottom: 0;
-    transform: none;
-    z-index: 100;
-    width: 300px;
-    height: 100vh;
-    background: $color-white;
-  }
+
 }
 
 .nav {
@@ -36,6 +27,7 @@
   &-list {
     list-style-type: none;
     display: flex;
+
     @include respond(xs) {
       flex-flow: column;
     }
@@ -45,18 +37,7 @@
     }
   }
 
-  &__buttons {
-    @include respond(xs) {
-      position: absolute;
-      background: rgba(3, 63, 99, 0.4);
-      right: 300px;
-      width: 100vw;
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem;
-      a {
-        display: flex;
-      }
-    }
+  @include respond(xs) {
+    display: none;
   }
 }
