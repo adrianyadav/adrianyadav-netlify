@@ -746,20 +746,12 @@ a {
 }
 .nav-list {
   list-style-type: none;
-  display: flex;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
 }
-@media (max-width: 37.5em) {
-  .nav-list {
-    flex-flow: column;
-  }
-}
-.nav-list li {
-  margin: 0 0.5rem;
-}
-@media (max-width: 37.5em) {
-  .nav {
-    display: none;
-  }
+.nav .nav__buttons {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

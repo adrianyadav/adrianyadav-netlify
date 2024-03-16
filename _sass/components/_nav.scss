@@ -26,18 +26,14 @@
 
   &-list {
     list-style-type: none;
-    display: flex;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
 
-    @include respond(xs) {
-      flex-flow: column;
-    }
 
-    li {
-      margin: 0 0.5rem;
-    }
   }
 
-  @include respond(xs) {
+  .nav__buttons {
     display: none;
   }
 }
