@@ -304,7 +304,7 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   min-width: 120rem;
   margin: 0 auto;
   padding: 1rem;
@@ -620,6 +620,9 @@ a {
 }
 .card:nth-child(2)::before {
   background-image: linear-gradient(to right bottom, #a2d5f2, #033f63), url("../img/rainbowdaycare.jpg");
+}
+.card:nth-child(3)::before {
+  background-image: linear-gradient(to right bottom, #a2d5f2, #033f63), url("../img/outfitsave.jpg");
 }
 .card-heading {
   display: block;

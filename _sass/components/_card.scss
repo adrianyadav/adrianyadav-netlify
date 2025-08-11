@@ -47,6 +47,14 @@
     }
   }
 
+  &:nth-child(3) {
+    &::before {
+      background-image: linear-gradient(to right bottom, #a2d5f2, #033f63),
+        url('../img/outfitsave.jpg');
+    }
+  }
+
+
 
   &-heading {
     display: block;
