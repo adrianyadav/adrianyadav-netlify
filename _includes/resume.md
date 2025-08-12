@@ -1,11 +1,16 @@
+---
+title: Resume
+layout: resume
+---
+
 <div class="contact" markdown="block">
 
-# AMAN (ADRIAN) YADAV
-
+# {{ site.name }}
+	
 <div class="contact-info" markdown="block">
 
-- [adrianyadav@gmail.com](mailto:adrianyadav@gmail.com)
-- [www.adrianyadav.com](http://www.adrianyadav.com)
+- [{{site.data.contact.email}}](mailto:adrianyadav@gmail.com)
+- [www.adrianyadav.com](https://www.adrianyadav.com)
 - [0411 364 409](tel:0411364409)
 - [github.com/adrianyadav](https://github.com/adrianyadav)
 
@@ -13,53 +18,41 @@
 
 </div>
 
+## SUMMARY
+
+Software Developer with 10 years of experience specializing in CMS development, automation solutions, and frontend development. Proven track record of streamlining content workflows and building tools to transform and scale businesses.
+
 ## SKILLS
 
-**Product Management**: Roadmap creation, backlog prioritization, requirement gathering, cross-team coordination
+**Frontend:** React, Next.js, Razor, JavaScript (ES6+), HTML5, CSS3, SCSS, Bootstrap, Tailwind CSS.
 
-**Technical Expertise**: HTML5, CSS3 (SASS), JavaScript, SQL, CMS platforms (SquizMatrix, Orchard)
+**Backend:** Node.js, PHP, SQL, CMS (Orchard Core, WordPress, Squiz and Decap CMS), Automated QA (Playwright), Git, CI/CD Pipelines (GitHub Actions, Buildkite).
 
-**Leadership & Collaboration**: Project management, Agile methodologies, stakeholder communication
+## EXPERIENCE
 
-## PROFESSIONAL EXPERIENCE
+### NIBTRAVEL | SOFTWARE DEVELOPER (FEB 2019 - AUG 2025)
 
-### NIBTRAVEL | SOFTWARE DEVELOPER (FEB 2019 - CURRENT)
+- Led CMS development and automation initiatives, cutting manual QA time by 40% through custom testing tools.
+- Implemented performance optimizations that improved page load times by 25% across core platforms.
+- Created UI libraries and components to improve scalability 
+- Delivered high-profile projects including [Travel Insurance Direct](https://www.travelinsurancedirect.com.au/) and [World Nomads](https://www.worldnomads.com/).
 
-- Partnered with cross-functional teams to enhance the frontend user experience and align with business objectives.
+### ROOKSTUDIO | FULLSTACK DEVELOPER (AUG 2018 - FEB 2019)
 
-- Optimized and maintained the CMS, offering training and support to stakeholders.
+Developed full-stack applications for startup clients using MERN stack.
 
-<<<<<<< HEAD
-- Improve and maintain the CMS as well provide ongoing support/training for CMS users
-- Work with UI designers to create scalable reusable UI components and maintain pattern libraries
-- Examples of my work: [https://buy.travelinsurancedirect.com.au/](https://buy.travelinsurancedirect.com.au/) and
-  [brand.worldnomads.com](https://brand.worldnomads.com)
-=======
-- Collaborated with UI designers to create scalable and reusable UI components, ensuring design consistency.
+### INTEX GROUP AUSTRALIA | WEB MANAGER (MAY 2018 - AUG 2018)
 
-- Drove accessibility improvements, boosted SEO, and enhanced page performance for www.worldnomads.com.
->>>>>>> a559ce1 (updated resume)
+Led e-commerce website development for Australian retail group.
 
-### ROOKSTUDIO | JR FULLSTACK DEVELOPER (AUG 2018 - FEB 2019)
+### IOOF | JUNIOR WEB DEVELOPER (FEB 2017 - MAY 2018)
 
-I was hired by a startup named Rookstudio as a developer to help them with multiple ongoing projects using the MERN
-stack.
-
-### INTEX GROUP AUSTRALIA | Product Owner (MAY 2018 - AUG 2018)
-
-I joined Intex Group Australia on a three-month contract to configure, deploy and customise their ecommerce websites.
-
-### IOOF | JR WEB DEVELOPER & DIGITAL ANALYST (FEB 2017 – MAY 2018)
-
-I was hired by IOOF as a junior web developer to work alongside the marketing team and manage their CMS a
+Managed and extended IOOF's CMS (Squiz).
 
 ## EDUCATION
 
-### MASTER OF BUSINESS ADMINISTRATION (GRADUATED DEC 2021)
+### MASTER OF BUSINESS ADMINISTRATION (DEC 2021)
+Western Sydney University, Sydney, Australia.
 
-SPECIALISATION IN MANAGEMENT \
-WESTERN SYDNEY UNIVERSITY, SYDNEY AUSTRALIA
-
-### BACHELOR OF COMPUTER SCIENCE (GRADUATED DEC 2016)
-
-UNIVERSITY OF OTAGO, DUNEDIN NEW ZEALAND
+### BACHELOR OF COMPUTER SCIENCE (DEC 2016)
+University of Otago, Dunedin, New Zealand.
