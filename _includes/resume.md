@@ -1,17 +1,12 @@
-<div class="contact" markdown="block">
-
-# {{ site.name }}
-	
 <div class="contact-info" markdown="block">
 
-- [{{site.data.contact.email}}](mailto:adrianyadav@gmail.com)
+- [adrianyadav@gmail.com](mailto:adrianyadav@gmail.com)
 - [www.adrianyadav.com](https://www.adrianyadav.com)
 - [0411 364 409](tel:0411364409)
 - [github.com/adrianyadav](https://github.com/adrianyadav)
 
 </div>
 
-</div>
 
 ## SUMMARY
 
