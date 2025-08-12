@@ -1,8 +1,3 @@
----
-title: Resume
-layout: resume
----
-
 <div class="contact" markdown="block">
 
 # {{ site.name }}
