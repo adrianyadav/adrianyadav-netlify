@@ -79,7 +79,6 @@ h1 {
   margin-bottom: 1rem;
   font-size: 6rem;
   font-weight: 100;
-  color: #3b3d41;
 }
 @media (max-width: 37.5em) {
   .h1,
@@ -87,14 +86,11 @@ h1 {
     font-size: 4rem;
   }
 }
-
-.h2,
-h2 {
-  margin-bottom: 1rem;
-  font-size: 4rem;
-  font-weight: 100;
+.h1,
+h1 {
   color: #3b3d41;
 }
+
 .h2--underline,
 h2--underline {
   text-transform: uppercase;
@@ -109,11 +105,21 @@ h2--underline::after {
   transform: scaleX(1.2);
   border-bottom: 3px solid #3b3d41;
 }
+.h2,
+h2 {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
 @media (max-width: 37.5em) {
   .h2,
   h2 {
     font-size: 2.5rem;
   }
+}
+.h2,
+h2 {
+  color: #3b3d41;
 }
 
 .h3,
@@ -121,13 +127,16 @@ h3 {
   margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 100;
-  color: #3b3d41;
 }
 @media (max-width: 37.5em) {
   .h3,
   h3 {
     font-size: 2.5rem;
   }
+}
+.h3,
+h3 {
+  color: #3b3d41;
 }
 
 a {
@@ -304,8 +313,7 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  min-width: 120rem;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
   padding: 1rem;
   column-gap: 3rem;
@@ -596,6 +604,7 @@ a {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   background-blend-mode: screen;
   place-items: center;
+  max-width: 52rem;
 }
 @media (max-width: 37.5em) {
   .card {
@@ -616,12 +625,9 @@ a {
   background-repeat: no-repeat;
 }
 .card:nth-child(1)::before {
-  background-image: linear-gradient(to right bottom, #a2d5f2, #033f63), url("../img/insightswithsapi.jpg");
-}
-.card:nth-child(2)::before {
   background-image: linear-gradient(to right bottom, #a2d5f2, #033f63), url("../img/rainbowdaycare.jpg");
 }
-.card:nth-child(3)::before {
+.card:nth-child(2)::before {
   background-image: linear-gradient(to right bottom, #a2d5f2, #033f63), url("../img/outfitsave.jpg");
 }
 .card-heading {
@@ -633,12 +639,14 @@ a {
   margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 100;
-  color: #fff;
 }
 @media (max-width: 37.5em) {
   .card-heading {
     font-size: 2.5rem;
   }
+}
+.card-heading {
+  color: #fff;
 }
 .card-desc {
   display: block;
@@ -743,15 +751,13 @@ a {
 @media (max-width: 37.5em) {
   .nav {
     display: flex;
-    flex-flow: column;
-    align-items: flex-start;
   }
 }
 .nav-list {
   list-style-type: none;
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .nav .nav__buttons {
   display: none;

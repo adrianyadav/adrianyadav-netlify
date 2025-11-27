@@ -13,6 +13,7 @@
   background-blend-mode: screen;
   // clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   place-items: center;
+  max-width: 52rem;
 
   @include respond(xs) {
     margin: 1rem 0;
@@ -35,19 +36,12 @@
   &:nth-child(1) {
     &::before {
       background-image: linear-gradient(to right bottom, #a2d5f2, #033f63),
-        url('../img/insightswithsapi.jpg');
-    }
-  }
-
-  &:nth-child(2) {
-    &::before {
-      background-image: linear-gradient(to right bottom, #a2d5f2, #033f63),
         url('../img/rainbowdaycare.jpg');
 
     }
   }
 
-  &:nth-child(3) {
+  &:nth-child(2) {
     &::before {
       background-image: linear-gradient(to right bottom, #a2d5f2, #033f63),
         url('../img/outfitsave.jpg');

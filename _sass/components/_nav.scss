@@ -20,16 +20,14 @@
 
   @include respond(xs) {
     display: flex;
-    flex-flow: column;
-    align-items: flex-start;
+
   }
 
   &-list {
     list-style-type: none;
     display: grid;
     grid-gap: 0.5rem;
-    grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: 1fr;
 
   }
 
